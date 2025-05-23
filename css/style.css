@@ -1,0 +1,72 @@
+ body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #222;
+    color: white;
+    padding: 20px;
+}
+
+.game-container {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.simon-button {
+    width: 150px;
+    height: 150px;
+    border: 3px solid #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.simon-button:hover {
+    transform: scale(1.05);
+}
+
+.red { background-color: #ff4444; }
+.blue { background-color: #4444ff; }
+.green { background-color: #44ff44; }
+.yellow { background-color: #ffff44; }
+
+.flash {
+    opacity: 0.5;
+    transform: scale(1.1);
+}
+
+.controls {
+    margin: 20px 0;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #555;
+    color: white;
+}
+
+button:hover {
+    background-color: #777;
+}
+
+#score {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+#message {
+    font-size: 18px;
+    margin: 10px 0;
+    min-height: 25px;
+}
