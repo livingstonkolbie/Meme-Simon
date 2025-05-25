@@ -1,7 +1,12 @@
+ /* The Simon squares need to be squircles and raised glassy like apple with gradient and cool borders,
+Background needs to be black but with gradients like apple,  */
+
+
+ 
  body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color: #222;
+    background-color: lightblue;
     color: white;
     padding: 20px;
 }
@@ -69,4 +74,12 @@ button:hover {
     font-size: 18px;
     margin: 10px 0;
     min-height: 25px;
+}
+
+
+/* squircle 3 */
+/* on the website with the squircles - 150px 12.5px pdf */
+
+.squircleBox img {
+    width: 25%;
 }
