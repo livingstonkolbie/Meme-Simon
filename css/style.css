@@ -6,7 +6,7 @@ Background needs to be black but with gradients like apple,  */
  body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color: lightblue;
+    background-color: darkslateblue;
     color: white;
     padding: 20px;
 }

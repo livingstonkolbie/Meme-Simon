@@ -43,7 +43,7 @@ function startGame() {
     gameStarted = true;
     gameSequence = [];
     level = 0;
-    updateMessage("Watch the sequence!");
+    // updateMessage("Watch the sequence!");
     nextLevel();
 }
 
@@ -55,7 +55,7 @@ function resetGame() {
     playerSequence = [];
     level = 0;
     updateScore();
-    updateMessage("Press Start to begin!");
+    // updateMessage("Press Start to begin!");
 }
 
 // Go to next level
@@ -70,12 +70,12 @@ function nextLevel() {
     gameSequence.push(randomColor);
     
     updateScore();
-    updateMessage("Level " + level + " - Watch!");
+    // updateMessage("Level " + level + " - Watch!");
     
     // Show the sequence after a short delay
     setTimeout(function() {
         showSequence();
-    }, 1000);
+    }, 200);
 }
 
 // Show the game sequence
@@ -90,7 +90,7 @@ function showSequence() {
         } else {
             // Sequence is done, player's turn
             isPlayerTurn = true;
-            updateMessage("Your turn! Repeat the sequence");
+            // updateMessage("Your turn! Repeat the sequence");
         }
     }
     
@@ -125,11 +125,11 @@ function playerClick(color) {
     if (playerSequence.length === gameSequence.length) {
         // Player got the whole sequence right!
         isPlayerTurn = false;
-        updateMessage("Correct! Next level coming...");
+        // updateMessage("Correct! Next level coming...");
         
         setTimeout(function() {
             nextLevel();
-        }, 1500);
+        }, 600);
     }
 }
 
@@ -137,7 +137,7 @@ function playerClick(color) {
 function gameOver() {
     gameStarted = false;
     isPlayerTurn = false;
-    updateMessage("Game Over! Your score: " + level);
+    // updateMessage("Game Over! Your score: " + level);
     
     // Flash all buttons red quickly
     setTimeout(function() {
@@ -150,10 +150,10 @@ function gameOver() {
 
 // Update score display
 function updateScore() {
-    document.getElementById('score').textContent = 'Score: ' + level;
+    document.getElementById('score').textContent = 'Level: ' + level;
 }
 
 // Update message display
-function updateMessage(text) {
-    document.getElementById('message').textContent = text;
-}
+// function updateMessage(text) {
+//     document.getElementById('message').textContent = text;
+// }
