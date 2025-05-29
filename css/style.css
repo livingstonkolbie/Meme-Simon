@@ -6,8 +6,8 @@ Background needs to be black but with gradients like apple,  */
  body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color: darkslateblue;
-    color: white;
+    background-color: #ffebeb;
+    /* color: white; */
     padding: 20px;
 }
 
@@ -19,14 +19,15 @@ Background needs to be black but with gradients like apple,  */
 .game-board {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    gap: 25px;
     margin: 20px 0;
+    justify-items: center;
 }
 
 .simon-button {
     width: 150px;
     height: 150px;
-    border: 3px solid #fff;
+    /* border: 3px solid #fff; */
     border-radius: 10px;
     cursor: pointer;
     transition: all 0.2s;
@@ -83,3 +84,15 @@ button:hover {
 .squircleBox img {
     width: 25%;
 }
+
+/* neu box */
+.neuBox {
+    height: 150px;
+    border-radius: 36px;
+    background: linear-gradient(145deg, #fffbfb, #e6d4d4);
+    box-shadow:  7px 7px 14px #857a7a, -7px -7px 14px #ffffff;
+}
+
+
+
+

@@ -8,34 +8,71 @@
     <title>Simple Simon</title>
 </head>
 <body>
-    
-        <div class="game-container">
+    <header role="banner">
         <h1>Simon Game</h1>
-        
-        <div id="score">Level: 0</div>
-        <!-- <div id="message">Press Start to begin!</div> -->
-        
-        <div class="game-board">
-            <div class="simon-button red" id=""></div>
-            <div class="simon-button blue" id="blue"></div>
-            <div class="simon-button green" id="green"></div>
-            <div class="simon-button yellow" id="yellow"></div>
-        </div>
-        
-        <div class="controls">
-            <button onclick="startGame()">Start Game</button>
-            <button onclick="resetGame()">Reset</button>
-        </div>
-    </div>
+    </header>
+    
+    <main role="main">
 
-    <!-- squ 3 -->
-    <section class="container squircleBox">
-        <div class="row">
-            <div class="col">
-                <img id="red" src="./images/squircle-purple2.png" alt="">
+        <div class="game-container">
+            
+            <div id="score">Level: 0</div>
+            <!-- <div id="message">Press Start to begin!</div> -->
+            
+            <div class="game-board">
+                <!-- <div class="simon-button red" id="red"></div> -->
+                <div id="red" class="col-9 neuBox simon-button red"></div>
+
+
+                <!-- <div class="simon-button blue" id="blue"></div> -->
+                <!-- <div id="blue" class="col-9 neuBox simon-button blue"></div> -->
+                <div class="col">
+                    <img class="simon-button" id="blue" src="./images/squircle-purple2.png" alt="">
+                </div>
+
+                <div class="simon-button green" id="green"></div>
+                <!-- <div id="green" class="col-9 neuBox simon-button green"></div> -->
+
+                <div class="simon-button yellow" id="yellow"></div>
+                <!-- <div id="yellow" class="col-9 neuBox simon-button yellow"></div> -->
+
+            </div>
+            
+            <div class="controls">
+                <button onclick="startGame()">Start Game</button>
+                <button onclick="resetGame()">Reset</button>
             </div>
         </div>
-    </section>
+    
+        <!-- squ 3 -->
+        <!-- <section class="container squircleBox">
+            <div class="row">
+                <div class="col">
+                    <img class="simon-button" id="blue" src="./images/squircle-purple2.png" alt="">
+                </div>
+            </div>
+        </section> -->
+
+        <!-- neu box trial -->
+        <section class="container my-3">
+            <div class="row">
+                <div class="col-4">
+
+                </div>
+                <div id="" class="col-4 neuBox">
+
+                </div>
+                <div class="col-4">
+
+                </div>
+            </div>
+        </section>
+
+
+
+
+    </main>
+
 
     <script src="./js/app.js"></script>
 </body>
