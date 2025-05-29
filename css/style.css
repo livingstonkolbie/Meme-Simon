@@ -7,8 +7,8 @@ Background needs to be black but with gradients like apple,  */
     font-family: Arial, sans-serif;
     text-align: center;
     background-color: #e0e0e0;
-    /* color: white; */
     padding: 20px;
+    color: #4f4f4f;
 }
 
 h1 {
@@ -43,11 +43,6 @@ h1 {
     transform: scale(0.95);
 }
 
-/* .red { background-color: #ff4444; } */
-.blue { background-color: #4444ff; }
-.green { background-color: #44ff44; }
-.yellow { background-color: #ffff44; }
-
 .flash {
     opacity: 0.5;
     transform: scale(0.95);
@@ -58,19 +53,26 @@ h1 {
 }
 
 button {
-    padding: 10px 20px;
-    font-size: 16px;
-    margin: 5px;
+    color: #4f4f4f;
+    padding: 0.4em 0.6em;
+    font-size: 18px;
+    border-radius: 0.5em;
+    background: #e8e8e8;
     cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    background-color: #555;
-    color: white;
+    border: 1px solid #e8e8e8;
+    transition: all 0.3s;
+    box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+    margin: 0 1rem;
 }
 
-button:hover {
-    background-color: #777;
+button:active {
+    color: #666;
+    box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
 }
+
+/* button:hover {
+    background-color: #777;
+} */
 
 #score {
     font-size: 24px;
@@ -84,43 +86,12 @@ button:hover {
 }
 
 
-/* squircle 3 */
-/* on the website with the squircles - 150px 12.5px pdf */
-
-.squircleBox img {
-    width: 25%;
-}
-
-
 /* neuBoard */
 
 .neuBoard {
     border-radius: 50px;
     background: #e0e0e0;
     box-shadow: inset 10px 10px 20px #bcbcbc, inset -10px -10px 20px #ffffff;
-}
-
-
-
-
-
-/* neu RED box */
-.neuBox {
-    /* height: 150px; */
-    border-radius: 36px;
-    background: linear-gradient(145deg, #fffbfb, #e6d4d4);
-    box-shadow:  7px 7px 14px #857a7a, -7px -7px 14px #ffffff;
-    align-content: center;
-}
-
-.innerNeu {
-    align-content: center;
-    justify-self: center;
-    width: 90%;
-    height: 132px;
-    border-radius: 26px;
-    background: #e0e0e0;
-    box-shadow: inset 5px 5px 10px #bcbcbc, inset -5px -5px 10px #ffffff;
 }
 
 
