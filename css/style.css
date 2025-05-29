@@ -135,9 +135,67 @@ button:hover {
 
 .innerGreenBox {
     justify-self: center;
-    width: 30%;
-    background-color: green;
-    border: 1px solid black;
-    height: 30%;
+    width: 75%;
+    height: 75%;
     border-radius: 65%;
+    background: #BAFFC9;
+    background: linear-gradient(340deg, rgba(186, 255, 201, 1) 0%, rgba(255, 255, 255, 1) 100%);
+    box-shadow: 0px 0px 11px 0px #ffffff;
+}
+
+/* neu Yellow box */
+
+.neuYellowBox {
+    align-content: center;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #cacaca, #f0f0f0);
+    box-shadow:  11px 11px 22px #6e6e6e, -11px -11px 22px #ffffff;
+}
+
+.innerYellowBox {
+    justify-self: center;
+    width: 75%;
+    height: 75%;
+    border-radius: 65%;
+    background: #FFFFBA;
+    background: linear-gradient(340deg, rgba(255, 255, 186, 1) 0%, rgba(255, 255, 255, 1) 100%);
+    box-shadow: 0px 0px 11px 0px #ffffff;
+}
+
+/*  neu Blue box */
+
+.neuBlueBox {
+    align-content: center;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #cacaca, #f0f0f0);
+    box-shadow:  11px 11px 22px #6e6e6e, -11px -11px 22px #ffffff;
+}
+
+.innerBlueBox {
+    justify-self: center;
+    width: 75%;
+    height: 75%;
+    border-radius: 65%;
+    background: #BAE1FF;
+    background: linear-gradient(340deg, rgba(186, 225, 255, 1) 0%, rgba(255, 255, 255, 1) 100%);
+    box-shadow: 0px 0px 11px 0px #ffffff;
+}
+
+/* neu RED box */
+
+.neuRedBox {
+    align-content: center;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #cacaca, #f0f0f0);
+    box-shadow:  11px 11px 22px #6e6e6e, -11px -11px 22px #ffffff;
+}
+
+.innerRedBox {
+    justify-self: center;
+    width: 75%;
+    height: 75%;
+    border-radius: 65%;
+    background: #FFB3BA;
+    background: linear-gradient(340deg, rgba(255, 179, 186, 1) 0%, rgba(255, 255, 255, 1) 100%);
+    box-shadow: 0px 0px 11px 0px #ffffff;
 }
