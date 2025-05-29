@@ -12,45 +12,52 @@
 </head>
 <body>
     <header role="banner">
-        <h1>Simon v2</h1>
+        <h1 class="mb-3">Simon v2</h1>
+        <p id="score">Level: 0</p>
     </header>
     
     <main role="main">
+        
+        <section class="neuBoard py-3">
 
-
-        <div class="game-container">
-            
-            <div id="score">Level: 0</div>
-            <!-- <div id="message">Press Start to begin!</div> -->
-            
-            <div class="game-board">
-                <!-- <div class="simon-button red" id="red"></div> -->
-                <div id="red" class="col-9 neuBox simon-button red">
-                    <div class="innerNeu">
-                        
+            <div class="game-container">
+                <div class="game-board">
+                    <!-- <div class="simon-button red" id="red"></div> -->
+                    <div id="red" class="col-9 neuBox simon-button">
+                        <div class="innerNeu">
+                            
+                        </div>
                     </div>
+    
+    
+                    <!-- <div class="simon-button blue" id="blue"></div> -->
+                    <!-- <div id="blue" class="col-9 neuBox simon-button blue"></div> -->
+                    <div class="col">
+                        <img class="simon-button" id="blue" src="./images/squircle-purple2.png" alt="">
+                    </div>
+    
+                    <!-- <div class="simon-button green" id="green"></div> -->
+                    <!-- <div id="green" class="col-9 neuBox simon-button green"></div> -->
+                     <div id="green" class="simon-button neuGreenBox">
+                        <div class="innerGreenBox">
+
+                        </div>
+                     </div>
+
+    
+                    <div class="simon-button yellow" id="yellow"></div>
+                    <!-- <div id="yellow" class="col-9 neuBox simon-button yellow"></div> -->
+    
                 </div>
-
-
-                <!-- <div class="simon-button blue" id="blue"></div> -->
-                <!-- <div id="blue" class="col-9 neuBox simon-button blue"></div> -->
-                <div class="col">
-                    <img class="simon-button" id="blue" src="./images/squircle-purple2.png" alt="">
+                
+                <div class="controls">
+                    <button onclick="startGame()">Start Game</button>
+                    <button onclick="resetGame()">Reset</button>
                 </div>
-
-                <div class="simon-button green" id="green"></div>
-                <!-- <div id="green" class="col-9 neuBox simon-button green"></div> -->
-
-                <div class="simon-button yellow" id="yellow"></div>
-                <!-- <div id="yellow" class="col-9 neuBox simon-button yellow"></div> -->
-
             </div>
-            
-            <div class="controls">
-                <button onclick="startGame()">Start Game</button>
-                <button onclick="resetGame()">Reset</button>
-            </div>
-        </div>
+
+        </section>
+
     
         <!-- squ 3 -->
         <!-- <section class="container squircleBox">

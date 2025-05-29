@@ -6,7 +6,7 @@ Background needs to be black but with gradients like apple,  */
  body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color: #ffebeb;
+    background-color: #e0e0e0;
     /* color: white; */
     padding: 20px;
 }
@@ -40,17 +40,17 @@ h1 {
 }
 
 .simon-button:hover {
-    transform: scale(1.05);
+    transform: scale(0.95);
 }
 
-.red { background-color: #ff4444; }
+/* .red { background-color: #ff4444; } */
 .blue { background-color: #4444ff; }
 .green { background-color: #44ff44; }
 .yellow { background-color: #ffff44; }
 
 .flash {
     opacity: 0.5;
-    transform: scale(1.1);
+    transform: scale(0.95);
 }
 
 .controls {
@@ -91,7 +91,20 @@ button:hover {
     width: 25%;
 }
 
-/* neu box */
+
+/* neuBoard */
+
+.neuBoard {
+    border-radius: 50px;
+    background: #e0e0e0;
+    box-shadow: inset 10px 10px 20px #bcbcbc, inset -10px -10px 20px #ffffff;
+}
+
+
+
+
+
+/* neu RED box */
 .neuBox {
     /* height: 150px; */
     border-radius: 36px;
@@ -111,5 +124,20 @@ button:hover {
 }
 
 
+/* neu GREEN box */
 
+.neuGreenBox {
+    align-content: center;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #cacaca, #f0f0f0);
+    box-shadow:  11px 11px 22px #6e6e6e, -11px -11px 22px #ffffff;
+}
 
+.innerGreenBox {
+    justify-self: center;
+    width: 30%;
+    background-color: green;
+    border: 1px solid black;
+    height: 30%;
+    border-radius: 65%;
+}
