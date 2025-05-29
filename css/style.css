@@ -93,10 +93,21 @@ button:hover {
 
 /* neu box */
 .neuBox {
-    height: 150px;
+    /* height: 150px; */
     border-radius: 36px;
     background: linear-gradient(145deg, #fffbfb, #e6d4d4);
     box-shadow:  7px 7px 14px #857a7a, -7px -7px 14px #ffffff;
+    align-content: center;
+}
+
+.innerNeu {
+    align-content: center;
+    justify-self: center;
+    width: 90%;
+    height: 132px;
+    border-radius: 26px;
+    background: #e0e0e0;
+    box-shadow: inset 5px 5px 10px #bcbcbc, inset -5px -5px 10px #ffffff;
 }
 
 
