@@ -11,6 +11,12 @@ Background needs to be black but with gradients like apple,  */
     padding: 20px;
 }
 
+h1 {
+    font-family: "Funnel Display", sans-serif;
+    font-size: xxx-large;
+    letter-spacing: 2px;
+}
+
 .game-container {
     max-width: 400px;
     margin: 0 auto;
