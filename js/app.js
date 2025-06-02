@@ -43,7 +43,6 @@ function startGame() {
     gameStarted = true;
     gameSequence = [];
     level = 0;
-    // updateMessage("Watch the sequence!");
     nextLevel();
 }
 
@@ -55,7 +54,6 @@ function resetGame() {
     playerSequence = [];
     level = 0;
     updateScore();
-    // updateMessage("Press Start to begin!");
 }
 
 // Go to next level
@@ -70,8 +68,7 @@ function nextLevel() {
     gameSequence.push(randomColor);
     
     updateScore();
-    // updateMessage("Level " + level + " - Watch!");
-    
+
     // Show the sequence after a short delay
     setTimeout(function() {
         showSequence();
@@ -90,7 +87,6 @@ function showSequence() {
         } else {
             // Sequence is done, player's turn
             isPlayerTurn = true;
-            // updateMessage("Your turn! Repeat the sequence");
         }
     }
     
@@ -104,7 +100,7 @@ function flashButton(color) {
     
     setTimeout(function() {
         button.classList.remove('flash');
-    }, 400);
+    }, 300);
 }
 
 // Handle player button click
@@ -116,16 +112,15 @@ function playerClick(color) {
     let currentIndex = playerSequence.length - 1;
     
     if (playerSequence[currentIndex] !== gameSequence[currentIndex]) {
-        // Wrong! Game over
+        // Wrong... Game over
         gameOver();
         return;
     }
     
     // Check if player finished the sequence
     if (playerSequence.length === gameSequence.length) {
-        // Player got the whole sequence right!
+        // Player got the whole sequence right
         isPlayerTurn = false;
-        // updateMessage("Correct! Next level coming...");
         
         setTimeout(function() {
             nextLevel();
@@ -137,14 +132,13 @@ function playerClick(color) {
 function gameOver() {
     gameStarted = false;
     isPlayerTurn = false;
-    // updateMessage("Game Over! Your score: " + level);
     
     // Flash all buttons red quickly
     setTimeout(function() {
-        document.body.style.backgroundColor = '#ff0000';
+        document.body.style.backgroundColor = '#FFB3BA';
         setTimeout(function() {
-            document.body.style.backgroundColor = '#222';
-        }, 200);
+            document.body.style.backgroundColor = '#e0e0e0';
+        }, 400);
     }, 100);
 }
 
@@ -153,7 +147,14 @@ function updateScore() {
     document.getElementById('score').textContent = 'Level: ' + level;
 }
 
-// Update message display
-// function updateMessage(text) {
-//     document.getElementById('message').textContent = text;
-// }
+
+
+// Splash Screen / Loading Screen
+
+let splashScreen = document.querySelector('.splash');
+splashScreen.addEventListener('click',()=>{
+  splashScreen.style.opacity = 0;
+  setTimeout(()=>{
+    splashScreen.classList.add('hidden')
+  },610)
+})

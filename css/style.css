@@ -70,9 +70,6 @@ button:active {
     box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
 }
 
-/* button:hover {
-    background-color: #777;
-} */
 
 #score {
     font-size: 24px;
@@ -170,3 +167,37 @@ button:active {
     background: linear-gradient(340deg, rgba(255, 179, 186, 1) 0%, rgba(255, 255, 255, 1) 100%);
     box-shadow: 0px 0px 11px 0px #ffffff;
 }
+
+
+
+/* Splash Screen / Loading Screen */
+
+
+.splash{
+    position : fixed;
+    top : 50%;
+    left : 50%;
+    height : 100%;
+    width : 100%;
+    transform : translate(-50%,-50%);    
+    background-color: #e0e0e0;
+    transition : all ease-in-out 600ms;
+}
+
+.hidden{
+    transition : 0.5s;
+    display : none;
+}
+
+.splash-header {
+    cursor : pointer;
+    font-size: xxx-large;
+    font-family: "Funnel Display";
+    height: 90%;
+    color: #4f4f4f;
+    /* font-size : 30px; */
+    display : flex;
+    justify-content: center;
+    align-items : center;
+}
+
