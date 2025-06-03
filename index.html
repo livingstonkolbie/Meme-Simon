@@ -6,6 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&  display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <title>Simple Simon</title>
@@ -17,7 +18,40 @@
     </header>
     
     <main role="main">
+
+        <!-- Splash Screen -->
+        <div id="splash-screen" class="splash-screen">
+            <h1 id="simon-title" class="simon-title">Simon</h1>
+        </div>
+
+        <!-- Menu Screen -->
+        <div id="menu-screen" class="menu-screen hidden">
+            <div class="menu-container">
+                <button class="menu-btn" onclick="showInstructions()">Instructions</button>
+                <button class="menu-btn" onclick="enterGame()">Enter Game</button>
+            </div>
+        </div>
+
+        <!-- Instructions Modal -->
+        <div class="modal fade" id="instructionsModal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">How to Play Simon</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>1. Watch the sequence of colored buttons light up</p>
+                        <p>2. Repeat the sequence by clicking the buttons in the same order</p>
+                        <p>3. Each level adds one more button to the sequence</p>
+                        <p>4. Make a mistake and it's game over!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         
+        <!-- Game screen -->
         <section class="neuBoard py-3">
 
             <div class="game-container">
@@ -58,14 +92,10 @@
             <button onclick="resetGame()">Reset</button>
         </div>
 
-        <!-- Splash Screen / Loading Screen -->
-        <div class="splash">
-            <h1 class="splash-header">Enter Game</h1>
-        </div>
 
     </main>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./js/app.js"></script>
 </body>
 </html>

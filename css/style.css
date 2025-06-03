@@ -173,31 +173,98 @@ button:active {
 /* Splash Screen / Loading Screen */
 
 
-.splash{
-    position : fixed;
-    top : 50%;
-    left : 50%;
-    height : 100%;
-    width : 100%;
-    transform : translate(-50%,-50%);    
-    background-color: #e0e0e0;
-    transition : all ease-in-out 600ms;
-}
-
-.hidden{
-    transition : 0.5s;
-    display : none;
-}
-
-.splash-header {
-    cursor : pointer;
-    font-size: xxx-large;
-    font-family: "Funnel Display";
-    height: 90%;
-    color: #4f4f4f;
-    /* font-size : 30px; */
-    display : flex;
+.splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+    display: flex;
     justify-content: center;
-    align-items : center;
+    align-items: center;
+    z-index: 1000;
 }
 
+.simon-title {
+    font-family: "Funnel Display", sans-serif;
+    font-size: 4rem;
+    color: #fff;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: titleAnimation 3s ease-in-out forwards;
+}
+
+@keyframes titleAnimation {
+    0% { opacity: 0; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(1.2); }
+}
+
+.menu-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.menu-container {
+    text-align: center;
+}
+
+.menu-btn {
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    padding: 15px 30px;
+    font-size: 18px;
+    background: #e8e8e8;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.menu-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.game-screen {
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.game-screen.show {
+    opacity: 1;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* adding for the ease in enter game screen functionality */
+
+.game-screen {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease-out;
+}
+
+.game-screen.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.menu-screen.fade-out {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.5s ease-in;
+}

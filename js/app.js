@@ -148,13 +148,44 @@ function updateScore() {
 }
 
 
+// Splash screens / loading screens
 
-// Splash Screen / Loading Screen
+// Splash screen functionality
+window.addEventListener('load', function() {
+    // After 3 seconds, hide splash and show menu
+    setTimeout(function() {
+        document.getElementById('splash-screen').classList.add('hidden');
+        document.getElementById('menu-screen').classList.remove('hidden');
+    }, 3000);
+});
 
-let splashScreen = document.querySelector('.splash');
-splashScreen.addEventListener('click',()=>{
-  splashScreen.style.opacity = 0;
-  setTimeout(()=>{
-    splashScreen.classList.add('hidden')
-  },610)
-})
+function showInstructions() {
+    const modal = new bootstrap.Modal(document.getElementById('instructionsModal'));
+    modal.show();
+}
+
+// function enterGame() {
+//     document.getElementById('menu-screen').classList.add('hidden');
+//     const gameScreen = document.getElementById('game-screen');
+//     gameScreen.classList.remove('hidden');
+//     gameScreen.classList.add('show');
+// }
+
+function enterGame() {
+    const menuScreen = document.getElementById('menu-screen');
+    const gameScreen = document.getElementById('game-screen');
+    
+    // Fade out menu first
+    menuScreen.classList.add('fade-out');
+    
+    setTimeout(function() {
+        // Hide menu and show game
+        menuScreen.classList.add('hidden');
+        gameScreen.classList.remove('hidden');
+        
+        // Small delay then ease in the game
+        setTimeout(function() {
+            gameScreen.classList.add('show');
+        }, 50);
+    }, 500);
+}
