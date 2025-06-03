@@ -164,13 +164,6 @@ function showInstructions() {
     modal.show();
 }
 
-// function enterGame() {
-//     document.getElementById('menu-screen').classList.add('hidden');
-//     const gameScreen = document.getElementById('game-screen');
-//     gameScreen.classList.remove('hidden');
-//     gameScreen.classList.add('show');
-// }
-
 function enterGame() {
     const menuScreen = document.getElementById('menu-screen');
     const gameScreen = document.getElementById('game-screen');
