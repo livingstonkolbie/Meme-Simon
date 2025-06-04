@@ -137,7 +137,7 @@ function gameOver() {
     setTimeout(function() {
         document.body.style.backgroundColor = '#FFB3BA';
         setTimeout(function() {
-            document.body.style.backgroundColor = '#e0e0e0';
+            document.body.style.backgroundColor = '#eceff8';
         }, 400);
     }, 100);
 }

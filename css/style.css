@@ -6,16 +6,25 @@ Background needs to be black but with gradients like apple,  */
  body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color: #e0e0e0;
-    /* background-color: #eceff8; */
+    /* background-color: #e0e0e0; */
+    background-color: #eceff8;
     padding: 20px;
     color: #4f4f4f;
 }
 
-h1 {
+/* h1 {
     font-family: "Funnel Display", sans-serif;
     font-size: xxx-large;
     letter-spacing: 2px;
+} */
+
+.titleIMG {
+    width: 13rem;
+    cursor: pointer;
+}
+
+.titleIMG:hover {
+    transform: scale(1.1);
 }
 
 .game-container {
@@ -52,21 +61,40 @@ h1 {
 }
 
 button {
-    color: #4f4f4f;
+    /* color: #4f4f4f; */
+    color: black;
     padding: 0.4em 0.6em;
     font-size: 18px;
     border-radius: 0.5em;
-    background: #e8e8e8;
+    /* background: #e8e8e8; */
+    background-color: rgba(255, 196, 125, 0.481);
     cursor: pointer;
     border: 1px solid #e8e8e8;
     transition: all 0.3s;
     box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
     margin: 0 1rem;
+    /* all: unset; */
 }
 
 button:active {
     color: #666;
     box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+}
+
+.startButton img {
+    width: 5rem;
+}
+
+.startButton img:hover {
+    transform: scale(1.1);
+}
+
+.resetButton img {
+    width: 5rem;
+}
+
+.resetButton img:hover {
+    transform: scale(1.1);
 }
 
 
@@ -83,12 +111,6 @@ button:active {
 
 
 /* neuBoard */
-
-.neuBoard {
-    border-radius: 50px;
-    background: #e0e0e0;
-    box-shadow: inset 10px 10px 20px #bcbcbc, inset -10px -10px 20px #ffffff;
-}
 
 
 /* neu GREEN box */
@@ -108,6 +130,11 @@ button:active {
     background: #BAFFC9;
     background: linear-gradient(340deg, rgba(186, 255, 201, 1) 0%, rgba(255, 255, 255, 1) 100%);
     box-shadow: 0px 0px 11px 0px #ffffff;
+    align-content: center;
+}
+
+.innerGreenBox img {
+    width: 87%;
 }
 
 /* neu Yellow box */
@@ -127,6 +154,11 @@ button:active {
     background: #FFFFBA;
     background: linear-gradient(340deg, rgba(255, 255, 186, 1) 0%, rgba(255, 255, 255, 1) 100%);
     box-shadow: 0px 0px 11px 0px #ffffff;
+    align-content: center;
+}
+
+.innerYellowBox img {
+    width: 101%;
 }
 
 /*  neu Blue box */
@@ -146,6 +178,11 @@ button:active {
     background: #BAE1FF;
     background: linear-gradient(340deg, rgba(186, 225, 255, 1) 0%, rgba(255, 255, 255, 1) 100%);
     box-shadow: 0px 0px 11px 0px #ffffff;
+    align-content: center;
+}
+
+.innerBlueBox img {
+    width: 65%;
 }
 
 /* neu RED box */
@@ -165,6 +202,11 @@ button:active {
     background: #FFB3BA;
     background: linear-gradient(340deg, rgba(255, 179, 186, 1) 0%, rgba(255, 255, 255, 1) 100%);
     box-shadow: 0px 0px 11px 0px #ffffff;
+    align-content: center;
+}
+
+.innerRedBox img {
+    width: 55%;
 }
 
 
@@ -179,8 +221,10 @@ button:active {
     width: 100%;
     height: 100%;
     /* background: linear-gradient(135deg, #1a1a1a, #2d2d2d); */
-    background: #4F4F4F;
-    background: radial-gradient(circle,rgba(79, 79, 79, 1) 0%, rgba(224, 224, 224, 1) 55%);
+    /* background: #4F4F4F; */
+    /* background: radial-gradient(circle,rgba(79, 79, 79, 1) 0%, rgba(224, 224, 224, 1) 55%); */
+    background: #A697FF;
+    background: radial-gradient(circle, rgba(166, 151, 255, 1) 0%, rgba(236, 239, 248, 1) 75%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -189,7 +233,7 @@ button:active {
 
 .simon-title {
     font-family: "Funnel Display", sans-serif;
-    font-size: 4rem;
+    width: 50%;
     color: #fff;
     opacity: 0;
     transform: scale(0.8);
@@ -209,8 +253,10 @@ button:active {
     width: 100%;
     height: 100%;
     /* background: linear-gradient(135deg, #1a1a1a, #2d2d2d); */
-    background: #4F4F4F;
-    background: radial-gradient(circle,rgba(79, 79, 79, 1) 0%, rgba(224, 224, 224, 1) 55%);
+    /* background: #4F4F4F; */
+    /* background: radial-gradient(circle,rgba(79, 79, 79, 1) 0%, rgba(224, 224, 224, 1) 55%); */
+    background: #A697FF;
+    background: radial-gradient(circle, rgba(166, 151, 255, 1) 0%, rgba(236, 239, 248, 1) 75%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -224,7 +270,7 @@ button:active {
 .menu-btn {
     display: block;
     width: 200px;
-    margin: 20px auto;
+    margin: 35px auto;
     padding: 15px 30px;
     font-size: 18px;
     background: #e8e8e8;
@@ -285,45 +331,10 @@ button:active {
 
 @media (min-width: 425px) {
     .simon-button {
-        width: 150px;
-        height: 150px;
+        width: 127px;
+        height: 127px;
         cursor: pointer;
         transition: all 0.2s;
     }
 }
 
-@media (min-width: 768px) {
-    .neuBoard {
-        margin: 0 9rem;
-        border-radius: 50px;
-        background: #e0e0e0;
-        box-shadow: inset 10px 10px 20px #bcbcbc, inset -10px -10px 20px #ffffff;
-    }
-}
-
-@media (min-width: 1024px) {
-    .neuBoard {
-        margin: 0 17rem;
-        border-radius: 50px;
-        background: #e0e0e0;
-        box-shadow: inset 10px 10px 20px #bcbcbc, inset -10px -10px 20px #ffffff;
-    }
-}
-
-@media (min-width: 1440px) {
-    .neuBoard {
-        margin: 0 30rem;
-        border-radius: 50px;
-        background: #e0e0e0;
-        box-shadow: inset 10px 10px 20px #bcbcbc, inset -10px -10px 20px #ffffff;
-    }
-}
-
-@media (min-width: 2560px) {
-    .neuBoard {
-        margin: 0 65rem;
-        border-radius: 50px;
-        background: #e0e0e0;
-        box-shadow: inset 10px 10px 20px #bcbcbc, inset -10px -10px 20px #ffffff;
-    }
-}
