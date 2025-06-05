@@ -182,3 +182,11 @@ function enterGame() {
         }, 50);
     }, 500);
 }
+
+
+// sound effects
+
+function play() {
+    let audio = document.getElementById("audio");
+    audio.play();
+}
