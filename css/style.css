@@ -131,7 +131,6 @@ button:active {
     background: linear-gradient(340deg, rgba(186, 255, 201, 1) 0%, rgba(255, 255, 255, 1) 100%);
     box-shadow: 0px 0px 11px 0px #ffffff;
     align-content: center;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -160,6 +159,10 @@ button:active {
     background: linear-gradient(340deg, rgba(255, 255, 186, 1) 0%, rgba(255, 255, 255, 1) 100%);
     box-shadow: 0px 0px 11px 0px #ffffff;
     align-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
 }
 
 .innerYellowBox img {
@@ -184,6 +187,10 @@ button:active {
     background: linear-gradient(340deg, rgba(186, 225, 255, 1) 0%, rgba(255, 255, 255, 1) 100%);
     box-shadow: 0px 0px 11px 0px #ffffff;
     align-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
 }
 
 .innerBlueBox img {
@@ -208,6 +215,10 @@ button:active {
     background: linear-gradient(340deg, rgba(255, 179, 186, 1) 0%, rgba(255, 255, 255, 1) 100%);
     box-shadow: 0px 0px 11px 0px #ffffff;
     align-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
 }
 
 .innerRedBox img {
