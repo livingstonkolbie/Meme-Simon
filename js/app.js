@@ -38,12 +38,14 @@ yellowButton.addEventListener('click', function() {
 
 // Start the game
 function startGame() {
-    if (gameStarted) return;
-    
-    gameStarted = true;
-    gameSequence = [];
-    level = 0;
-    nextLevel();
+    if (gameStarted) {
+        return;
+    } else {
+        gameStarted = true;
+        gameSequence = [];
+        level = 0;
+        nextLevel();
+    }
 }
 
 // Reset the game
@@ -70,14 +72,13 @@ function nextLevel() {
     updateScore();
 
     // Show the sequence after a short delay
-    setTimeout(function() {
-        showSequence();
-    }, 200);
+    setTimeout(showSequence, 200);
+    
 }
 
 // Show the game sequence
 function showSequence() {
-    let i = 0;
+    let i = 0; //like a pointer finger... going to start by pointing at "color 0"
     
     function showNextColor() {
         if (i < gameSequence.length) {
@@ -92,6 +93,14 @@ function showSequence() {
     
     showNextColor();
 }
+
+// 6/5/25
+
+// THIS IS WHERE WE FINISHED YESTERDAY--- GET CLEAR ON PLACEHOLDER (COLOR) SITUATION
+
+// i think we feel mostly good... we need to walk through flashButton(), playerClick(), and the splash screen / menu screen stuff for real
+
+// NEED TO ADD THE SFX!!
 
 // Flash a button
 function flashButton(color) {
@@ -133,7 +142,7 @@ function gameOver() {
     gameStarted = false;
     isPlayerTurn = false;
     
-    // Flash all buttons red quickly
+    // Flash background red quickly
     setTimeout(function() {
         document.body.style.backgroundColor = '#FFB3BA';
         setTimeout(function() {
