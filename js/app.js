@@ -157,7 +157,7 @@ window.addEventListener('load', function() {
     // Show a button on the splash screen for user interaction
     const splashScreen = document.getElementById('splash-screen');
     const button = document.createElement('button');
-    button.textContent = 'Click to Start with Sound';
+    button.textContent = 'Enable sound for best experience!';
     button.style.position = 'absolute';
     button.style.bottom = '20%';
     button.style.left = '50%';
@@ -181,7 +181,10 @@ window.addEventListener('load', function() {
         setTimeout(function() {
             document.getElementById('splash-screen').classList.add('hidden');
             document.getElementById('menu-screen').classList.remove('hidden');
-        }, 4000);
+
+            const audio = new Audio('windows-error2.mp3');
+            audio.play();
+        }, 3900);
     });
 });
 
