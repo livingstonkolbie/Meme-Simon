@@ -94,13 +94,6 @@ function showSequence() {
     showNextColor();
 }
 
-// 6/5/25
-
-// THIS IS WHERE WE FINISHED YESTERDAY--- GET CLEAR ON PLACEHOLDER (COLOR) SITUATION
-
-// i think we feel mostly good... we need to walk through flashButton(), playerClick(), and the splash screen / menu screen stuff for real
-
-// NEED TO ADD THE SFX!!
 
 // Flash a button
 function flashButton(color) {
@@ -144,9 +137,9 @@ function gameOver() {
     
     // Flash background red quickly
     setTimeout(function() {
-        document.body.style.backgroundColor = '#FFB3BA';
+        document.body.style.backgroundColor = '#FFB3BA'; //light red
         setTimeout(function() {
-            document.body.style.backgroundColor = '#eceff8';
+            document.body.style.backgroundColor = '#eceff8'; //original background color
         }, 400);
     }, 100);
 }
@@ -159,14 +152,42 @@ function updateScore() {
 
 // Splash screens / loading screens
 
-// Splash screen functionality
+
 window.addEventListener('load', function() {
-    // After 3 seconds, hide splash and show menu
-    setTimeout(function() {
-        document.getElementById('splash-screen').classList.add('hidden');
-        document.getElementById('menu-screen').classList.remove('hidden');
-    }, 3000);
+    // Show a button on the splash screen for user interaction
+    const splashScreen = document.getElementById('splash-screen');
+    const button = document.createElement('button');
+    button.textContent = 'Click to Start with Sound';
+    button.style.position = 'absolute';
+    button.style.bottom = '20%';
+    button.style.left = '50%';
+    button.style.transform = 'translateX(-50%)';
+    button.style.padding = '15px 30px';
+    button.style.fontSize = '18px';
+    splashScreen.appendChild(button);
+
+    button.addEventListener('click', function() {
+        // Play audio
+        const audio = new Audio('heavenly-music.mp3');
+        audio.play();
+        
+        // Start animation
+        document.getElementById('simon-title').style.animation = 'titleAnimation 4s ease-in-out forwards';
+        
+        // Remove button
+        button.remove();
+        
+        // After 3 seconds, hide splash and show menu
+        setTimeout(function() {
+            document.getElementById('splash-screen').classList.add('hidden');
+            document.getElementById('menu-screen').classList.remove('hidden');
+        }, 4000);
+    });
 });
+
+
+
+// MENU SCREEN
 
 function showInstructions() {
     const modal = new bootstrap.Modal(document.getElementById('instructionsModal'));

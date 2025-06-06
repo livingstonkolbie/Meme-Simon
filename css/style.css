@@ -253,7 +253,7 @@ button:active {
     color: #fff;
     opacity: 0;
     transform: scale(0.8);
-    animation: titleAnimation 3s ease-in-out forwards;
+    /* animation: titleAnimation 3s ease-in-out forwards; */
 }
 
 @keyframes titleAnimation {
