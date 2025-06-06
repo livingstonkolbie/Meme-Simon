@@ -5,6 +5,8 @@ let level = 0;
 let isPlayerTurn = false;
 let gameStarted = false;
 
+let backgroundMusic;
+
 // Get all the buttons
 let redButton = document.getElementById('red');
 let blueButton = document.getElementById('blue');
@@ -56,6 +58,11 @@ function resetGame() {
     playerSequence = [];
     level = 0;
     updateScore();
+
+    if (backgroundMusic) {
+        backgroundMusic.currentTime = 0;
+        backgroundMusic.play();
+    }
 }
 
 // Go to next level
@@ -134,6 +141,12 @@ function playerClick(color) {
 function gameOver() {
     gameStarted = false;
     isPlayerTurn = false;
+
+    //Stop background music
+    if (backgroundMusic) {
+        backgroundMusic.pause();
+        backgroundMusic.currentTime = 0;
+    }
     
     // Flash background red quickly
     setTimeout(function() {
@@ -182,9 +195,9 @@ window.addEventListener('load', function() {
             document.getElementById('splash-screen').classList.add('hidden');
             document.getElementById('menu-screen').classList.remove('hidden');
 
-            const audio = new Audio('windows-error2.mp3');
+            const audio = new Audio('ahh-fade.mp3');
             audio.play();
-        }, 3900);
+        }, 4000);
     });
 });
 
@@ -192,27 +205,75 @@ window.addEventListener('load', function() {
 
 // MENU SCREEN
 
+
+const instructionsBtn = document.querySelector('.menu-btn[onclick="showInstructions()"]');
+const enterGameBtn = document.querySelector('.menu-btn[onclick="enterGame()"]');
+
+// Add hover sound to Instructions button
+instructionsBtn.addEventListener('mouseenter', function() {
+    const hoverAudio = new Audio('vine-boom.mp3');
+    hoverAudio.play();
+});
+
+// Add hover sound to Enter Game button  
+enterGameBtn.addEventListener('mouseenter', function() {
+    const hoverAudio = new Audio('vine-boom.mp3');
+    hoverAudio.play();
+});
+
+
+//show instructions
 function showInstructions() {
+
+    const modalAudio = new Audio('taco-bell.mp3');
+    modalAudio.play();
+
     const modal = new bootstrap.Modal(document.getElementById('instructionsModal'));
     modal.show();
 }
 
+//enter game
 function enterGame() {
+
     const menuScreen = document.getElementById('menu-screen');
     const gameScreen = document.getElementById('game-screen');
-    
-    // Fade out menu first
-    menuScreen.classList.add('fade-out');
+
     
     setTimeout(function() {
-        // Hide menu and show game
-        menuScreen.classList.add('hidden');
-        gameScreen.classList.remove('hidden');
         
-        // Small delay then ease in the game
+        // Glitch clip
+        const videoElement = document.createElement('video');
+        videoElement.src = 'glitch-video-edit.mp4';
+        videoElement.style.position = 'fixed';
+        videoElement.style.top = '0';
+        videoElement.style.left = '0';
+        videoElement.style.width = '100%';
+        videoElement.style.height = '100%';
+        videoElement.style.objectFit = 'cover';
+        videoElement.style.zIndex = '1001';
+        videoElement.autoplay = true;
+        videoElement.muted = false;
+        
+        document.body.appendChild(videoElement);
+
+        menuScreen.classList.add("fade-out");
+
         setTimeout(function() {
+            menuScreen.classList.add('hidden');
+        }, 500);
+        
+        videoElement.addEventListener('ended', function() {
+            videoElement.remove();
+            gameScreen.classList.remove('hidden');
             gameScreen.classList.add('show');
-        }, 50);
+        });
+
+        setTimeout(function() {
+            backgroundMusic = new Audio('wii-shop.mp3');
+            backgroundMusic.loop = true;
+            backgroundMusic.play();
+        }, 3000);
+        
     }, 500);
 }
 
