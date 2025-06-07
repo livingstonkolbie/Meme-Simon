@@ -204,6 +204,9 @@ function playerClick(color) {
         setTimeout(function() {
             nextLevel();
         }, 600);
+    } else {
+        // Player hasn't finished sequence yet - restart timer for next button
+        playerTimer = setTimeout(startPlayerCountdown, 2000);
     }
 }
 
