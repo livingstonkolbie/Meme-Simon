@@ -14,28 +14,53 @@ let greenButton = document.getElementById('green');
 let yellowButton = document.getElementById('yellow');
 
 // Add click listeners to each button
+
+//RED
 redButton.addEventListener('click', function() {
     if (isPlayerTurn) {
         playerClick('red');
     }
 });
 
+redButton.addEventListener('click', function() {
+    const audio = new Audio('bruh.mp3');
+    audio.play();
+});
+
+//BLUE
 blueButton.addEventListener('click', function() {
     if (isPlayerTurn) {
         playerClick('blue');
     }
 });
 
+blueButton.addEventListener('click', function() {
+    const audio = new Audio('yeet.mp3');
+    audio.play();
+});
+
+//GREEN
 greenButton.addEventListener('click', function() {
     if (isPlayerTurn) {
         playerClick('green');
     }
 });
 
+greenButton.addEventListener('click', function() {
+    const audio = new Audio('got-eem2.mp3');
+    audio.play();
+});
+
+//YELLOW
 yellowButton.addEventListener('click', function() {
     if (isPlayerTurn) {
         playerClick('yellow');
     }
+});
+
+yellowButton.addEventListener('click', function() {
+    const audio = new Audio('perfect.mp3');
+    audio.play();
 });
 
 // Start the game
@@ -102,10 +127,26 @@ function showSequence() {
 }
 
 
-// Flash a button
+// Flash a button AND play the meme sound
 function flashButton(color) {
     let button = document.getElementById(color);
     button.classList.add('flash');
+
+    let audio;
+
+    if (color === 'red') {
+        audio = new Audio('bruh.mp3');
+    } else if (color === 'blue') {
+        audio = new Audio('yeet.mp3');
+    } else if (color === 'green') {
+        audio = new Audio('got-eem2.mp3');
+    } else if (color === 'yellow') {
+        audio = new Audio('perfect.mp3');
+    } 
+
+    if (audio) {
+        audio.play();
+    }
     
     setTimeout(function() {
         button.classList.remove('flash');
@@ -147,6 +188,12 @@ function gameOver() {
         backgroundMusic.pause();
         backgroundMusic.currentTime = 0;
     }
+
+    // Play game over sound
+    setTimeout(function() {
+        const gameOverAudio = new Audio('spongebob.mp3');
+        gameOverAudio.play();
+    }, 900);
     
     // Flash background red quickly
     setTimeout(function() {
@@ -178,6 +225,7 @@ window.addEventListener('load', function() {
     button.style.padding = '15px 30px';
     button.style.fontSize = '18px';
     splashScreen.appendChild(button);
+
 
     button.addEventListener('click', function() {
         // Play audio
@@ -269,7 +317,7 @@ function enterGame() {
         });
 
         setTimeout(function() {
-            backgroundMusic = new Audio('wii-shop.mp3');
+            backgroundMusic = new Audio('wii-quiet2.mp3');
             backgroundMusic.loop = true;
             backgroundMusic.play();
         }, 3000);
@@ -280,7 +328,7 @@ function enterGame() {
 
 // sound effects
 
-function play() {
-    let audio = document.getElementById("audio");
-    audio.play();
-}
+// function play() {
+//     let audio = document.getElementById("audio");
+//     audio.play();
+// }
