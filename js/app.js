@@ -7,6 +7,9 @@ let gameStarted = false;
 
 let backgroundMusic;
 
+let playerTimer;
+let countdownInterval;
+
 // Get all the buttons
 let redButton = document.getElementById('red');
 let blueButton = document.getElementById('blue');
@@ -63,8 +66,15 @@ yellowButton.addEventListener('click', function() {
     audio.play();
 });
 
+
 // Start the game
 function startGame() {
+
+    // Stop pulsing and disable both buttons during gameplay
+    document.querySelector('.startButton').classList.remove('pulse');
+    document.querySelector('.startButton').disabled = true;
+    document.querySelector('.resetButton').disabled = true;
+
     if (gameStarted) {
         return;
     } else {
@@ -88,6 +98,16 @@ function resetGame() {
         backgroundMusic.currentTime = 0;
         backgroundMusic.play();
     }
+
+    // Stop reset pulsing, disable reset, enable and pulse start
+    document.querySelector('.resetButton').classList.remove('pulse');
+    document.querySelector('.resetButton').disabled = true;
+    document.querySelector('.startButton').disabled = false;
+    document.querySelector('.startButton').classList.add('pulse');
+
+    // Clear timers
+    clearTimeout(playerTimer);
+    clearInterval(countdownInterval);
 }
 
 // Go to next level
@@ -120,6 +140,9 @@ function showSequence() {
         } else {
             // Sequence is done, player's turn
             isPlayerTurn = true;
+
+            // Start 2 second grace period, then countdown
+            playerTimer = setTimeout (startPlayerCountdown, 2000); 
         }
     }
     
@@ -155,6 +178,12 @@ function flashButton(color) {
 
 // Handle player button click
 function playerClick(color) {
+    
+    // Clear any active timers
+    clearTimeout(playerTimer);
+    clearInterval(countdownInterval);
+    updateScore(); // Reset score display
+
     flashButton(color);
     playerSequence.push(color);
     
@@ -183,6 +212,12 @@ function gameOver() {
     gameStarted = false;
     isPlayerTurn = false;
 
+    // Enable reset button and make it pulse, keep start disabled
+    document.querySelector('.resetButton').disabled = false;
+    document.querySelector('.resetButton').classList.add('pulse');
+    document.querySelector('.startButton').disabled = true;
+    
+
     //Stop background music
     if (backgroundMusic) {
         backgroundMusic.pause();
@@ -202,6 +237,13 @@ function gameOver() {
             document.body.style.backgroundColor = '#eceff8'; //original background color
         }, 400);
     }, 100);
+
+    // Clear timers
+    clearTimeout(playerTimer);
+    clearInterval(countdownInterval);
+
+    document.getElementById('score').textContent = 'Oops... try again!';
+
 }
 
 // Update score display
@@ -211,8 +253,6 @@ function updateScore() {
 
 
 // Splash screens / loading screens
-
-
 window.addEventListener('load', function() {
     // Show a button on the splash screen for user interaction
     const splashScreen = document.getElementById('splash-screen');
@@ -247,13 +287,11 @@ window.addEventListener('load', function() {
             audio.play();
         }, 4000);
     });
+
 });
 
 
-
 // MENU SCREEN
-
-
 const instructionsBtn = document.querySelector('.menu-btn[onclick="showInstructions()"]');
 const enterGameBtn = document.querySelector('.menu-btn[onclick="enterGame()"]');
 
@@ -317,18 +355,38 @@ function enterGame() {
         });
 
         setTimeout(function() {
-            backgroundMusic = new Audio('wii-quiet2.mp3');
+            backgroundMusic = new Audio('wii-shop-quiet.mp3');
             backgroundMusic.loop = true;
             backgroundMusic.play();
         }, 3000);
         
     }, 500);
+
+    // When game first loads - start button pulses, reset is disabled
+    setTimeout(function() {
+        document.querySelector('.startButton').classList.add('pulse');
+        document.querySelector('.resetButton').disabled = true;
+    }, 500);
 }
 
 
-// sound effects
 
-// function play() {
-//     let audio = document.getElementById("audio");
-//     audio.play();
-// }
+//  Player countdown functionality
+function startPlayerCountdown() {
+    let countdown = 3;
+    document.getElementById('score').textContent = `Choose in ${countdown}`;
+    
+    countdownInterval = setInterval(function() {
+        countdown--;
+        if (countdown > 0) {
+            document.getElementById('score').textContent = `Choose in ${countdown}`;
+        } else {
+            clearInterval(countdownInterval);
+
+            const timeoutAudio = new Audio('bonk.mp3');
+            timeoutAudio.play();
+
+            gameOver();
+        }
+    }, 1000);
+}

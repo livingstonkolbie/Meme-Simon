@@ -89,12 +89,44 @@ button:active {
     transform: scale(1.1);
 }
 
+.startButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.startButton:disabled img:hover {
+    transform: none;
+}
+
 .resetButton img {
     width: 5rem;
 }
 
 .resetButton img:hover {
     transform: scale(1.1);
+}
+
+.resetButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.resetButton:disabled img:hover {
+    transform: none;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.startButton.pulse {
+    animation: pulse 1.5s infinite;
+}
+
+.resetButton.pulse {
+    animation: pulse 1.5s infinite;
 }
 
 
