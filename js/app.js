@@ -262,7 +262,6 @@ window.addEventListener('load', function() {
     const button = document.createElement('button');
     button.textContent = 'Enable sound for best experience!';
     button.style.position = 'absolute';
-    button.style.bottom = '20%';
     button.style.left = '50%';
     button.style.transform = 'translateX(-50%)';
     button.style.padding = '15px 30px';
